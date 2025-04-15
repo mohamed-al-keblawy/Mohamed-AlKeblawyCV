@@ -3,75 +3,606 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Al Keblawy - CV</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mohamed AL Keblawy | Software Developer | .NET & Full-Stack Specialist</title>
+    <meta name="description" content="Mohamed AL Keblawy is a Software Developer specializing in .NET Framework, ASP.NET Core, and full-stack development with extensive experience in the UAE.">
+    <meta name="keywords" content="Mohamed AL Keblawy, Software Developer, .NET Developer, C#, ASP.NET Core, Full-Stack Developer, UAE Developer, Ras al-Khaimah">
+    <meta name="author" content="Mohamed AL Keblawy">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Mohamed AL Keblawy | Software Developer">
+    <meta property="og:description" content="Software Developer specializing in .NET Framework, ASP.NET Core, and full-stack development">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mohamed-alkeblawy.com/">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mohamed-alkeblawy.com/">
+    
+    <style>
+        :root {
+            --primary-color: #0076d6;
+            --secondary-color: #333;
+            --light-bg: #f8f9fa;
+            --border-color: #ddd;
+            --accent-color: #2cb1bc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .title {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-item i {
+            font-size: 1.2rem;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: #f0f0f0;
+            text-decoration: underline;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .action-button {
+            padding: 10px 20px;
+            background-color: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .action-button:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        main {
+            padding: 40px 20px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .section-title .toggle-icon {
+            margin-left: auto;
+            transition: transform 0.3s;
+        }
+        
+        .section-content {
+            max-height: 2000px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        
+        .section-content.collapsed {
+            max-height: 0;
+        }
+        
+        .summary {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .experience-item:last-child, .education-item:last-child {
+            border-bottom: none;
+        }
+        
+        .job-title, .education-degree {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        
+        .company-name, .school-name {
+            font-weight: 500;
+            color: var(--accent-color);
+        }
+        
+        .work-period, .education-period {
+            color: #777;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .job-description ul {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+        
+        .job-description li {
+            margin-bottom: 8px;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-tag {
+            background-color: var(--light-bg);
+            color: var(--secondary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .languages-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .language-item {
+            background-color: var(--light-bg);
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .language-name {
+            font-weight: 500;
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Preload fontawesome icons for better performance */
+        .preload-icons {
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        /* For mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 30px 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            main {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="mohamed-al-keblawy-cv.pdf" as="document">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Mohamed Al Keblawy</h1>
-            <p>Software Developer - .NET Specialist</p>
-            <p>Phone: (+971) 54 345 8767 | Email: <a href="mailto:alkeblawy.m@gmail.com">alkeblawy.m@gmail.com</a></p>
-            <p>GitHub: <a href="https://github.com/mohamed-al-keblawy" target="_blank">mohamed-al-keblawy</a></p>
-            <p>Ras al-Khaimah, United Arab Emirates</p>
+            <div class="header-content">
+                <h1>Mohamed AL Keblawy</h1>
+                <div class="title">.NET & Full-Stack Software Developer</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <span>(+971) 54 345 8767</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <a href="mailto:alkeblawy.m@gmail.com" title="Email Mohamed AL Keblawy">alkeblawy.m@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <a href="https://github.com/mohamed-al-keblawy" target="_blank" rel="noopener" title="Mohamed AL Keblawy on GitHub">github.com/mohamed-al-keblawy</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        <a href="https://www.linkedin.com/in/mohamed-al-keblawy/" target="_blank" rel="noopener" title="Mohamed AL Keblawy on LinkedIn">linkedin.com/in/mohamed-al-keblawy</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Ras al-Khaimah, United Arab Emirates</span>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <a href="https://mohamed-alkeblawy.com/" target="_blank" rel="noopener" class="action-button" title="Visit Mohamed AL Keblawy's Website">
+                        <i class="fas fa-globe" aria-hidden="true"></i> Visit My Website
+                    </a>
+                    <a href="mohamed-al-keblawy-cv.pdf" download class="action-button" title="Download Mohamed AL Keblawy's CV">
+                        <i class="fas fa-download" aria-hidden="true"></i> Download CV (PDF)
+                    </a>
+                </div>
+            </div>
         </header>
-
-        <section class="summary">
-            <h2>Professional Summary</h2>
-            <p>Accomplished Software Developer with a robust background in full-stack development, specializing in .NET Framework, ASP.NET Core, and front-end technologies. Known for enhancing user experiences at INOCLAD Middle East with innovative solutions and teamwork.</p>
-        </section>
-
-        <section class="experience">
-            <h2>Professional Experience</h2>
-            <div>
-                <h3>Software Developer</h3>
-                <p>INOCLAD Middle East, Ras Al Khaimah, UAE | June 2022 - Present</p>
-                <ul>
-                    <li>Developed and maintained Windows Forms applications using C# and .NET Framework.</li>
-                    <li>Collaborated with teams for debugging and code optimization.</li>
-                    <li>Used DevExpress controls to enhance UI/UX.</li>
-                </ul>
-            </div>
-            <div>
-                <h3>.NET Developer</h3>
-                <p>Freelance, Abu Dhabi, UAE | May 2021 - Jan 2022</p>
-                <ul>
-                    <li>Full-stack development: HTML/CSS/SASS, .NET Core, MVC, Azure.</li>
-                    <li>Code reviews and testing to ensure quality.</li>
-                    <li>Developed ASP.NET MVC applications and Web Services/REST APIs.</li>
-                </ul>
-            </div>
-            <!-- Add other experience here -->
-        </section>
-
-        <section class="education">
-            <h2>Education</h2>
-            <p>Master in Web Science, Syrian Virtual University, Damascus, Syria | September 2016 - January 2019</p>
-            <p>BA in Information Technology, Syrian Virtual University, Damascus, Syria | September 2010 - June 2014</p>
-        </section>
-
-        <section class="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>.NET Development</li>
-                <li>ASP.NET Core</li>
-                <li>JavaScript, HTML, CSS</li>
-                <li>REST APIs</li>
-                <!-- Add more skills here -->
-            </ul>
-        </section>
-
-        <section class="languages">
-            <h2>Languages</h2>
-            <p>English (Level C2), Arabic (Mother language)</p>
-        </section>
-
-        <section class="hobbies">
-            <h2>Hobbies and Interests</h2>
-            <p>Writing tutorials, solving puzzles</p>
-        </section>
+        
+        <main>
+            <section id="summary" aria-labelledby="summary-heading">
+                <div class="section-title" onclick="toggleSection('summary-content')" tabindex="0" role="button" aria-expanded="true" aria-controls="summary-content">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                    <h2 id="summary-heading">Professional Summary</h2>
+                    <i class="fas fa-chevron-down toggle-icon" id="summary-icon" aria-hidden="true"></i>
+                </div>
+                <div class="section-content" id="summary-content">
+                    <div class="summary">
+                        <p>Accomplished Software Developer with extensive experience in full-stack development, specializing in the .NET Framework, ASP.NET Core, and front-end technologies. Recognized for delivering innovative solutions that enhance user experiences and streamline operations at INOCLAD Middle East. A proactive team player with exceptional problem-solving skills, a strong commitment to code quality, and a passion for leveraging cutting-edge technologies. Dedicated to continuous learning and professional growth to drive impactful results.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="experience" aria-labelledby="experience-heading">
+                <div class="section-title" onclick="toggleSection('experience-content')" tabindex="0" role="button" aria-expanded="true" aria-controls="experience-content">
+                    <i class="fas fa-briefcase" aria-hidden="true"></i>
+                    <h2 id="experience-heading">Professional Experience</h2>
+                    <i class="fas fa-chevron-down toggle-icon" id="experience-icon" aria-hidden="true"></i>
+                </div>
+                <div class="section-content" id="experience-content">
+                    <article class="experience-item">
+                        <h3 class="job-title">Software Developer</h3>
+                        <div class="company-name">Inoclad Middle East, Ras Al Khaimah, United Arab Emirates</div>
+                        <div class="work-period">June 2022 - April 2025</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Developed and maintained Windows Forms applications using <strong>C#</strong> and <strong>.NET Framework</strong></li>
+                                <li>Collaborated in a team environment to <strong>troubleshoot</strong>, debug, and optimize code</li>
+                                <li>Utilized <strong>DevExpress</strong> controls and libraries to enhance user interfaces and improve user experience</li>
+                                <li>Experience in creating stored procedures to call linked servers for remote database querying and operations</li>
+                                <li>Applied best practices in .NET development, including <strong>dependency injection</strong> and <strong>design patterns</strong>, to improve application scalability and maintainability</li>
+                                <li>Designed and implemented <strong>RESTful APIs</strong> for integration between applications and external systems</li>
+                                <li>Developed and maintained web applications using <strong>Angular</strong> and <strong>Git version control</strong>, ensuring seamless collaboration and code quality in a team environment</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="experience-item">
+                        <h3 class="job-title">.Net Developer</h3>
+                        <div class="company-name">Freelance, Abu Dhabi, United Arab Emirates</div>
+                        <div class="work-period">May 2021 - January 2022</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Hands-on Full-stack development - from using front-end technologies like HTML/CSS/SASS to database technologies such as SQL Server and everything in between - <strong>MVC</strong>, <strong>.Net Core</strong>, Azure, etc.</li>
+                                <li>Demonstrate an interest in coding standards and champion best practices</li>
+                                <li>Ensure code quality is met through participating in code reviews and testing frameworks</li>
+                                <li>Take accountability for issues/incidents and lead through to resolution</li>
+                                <li>Develop new products and add features to existing .NET applications</li>
+                                <li>Develop ASP.Net MVC applications</li>
+                                <li>Develop HTML/CSS/JavaScript in accordance with style guides and pattern libraries</li>
+                                <li>Develop Web Services/ REST APIs</li>
+                                <li>Maintain existing applications</li>
+                                <li>Diagnose and fix bugs</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="experience-item">
+                        <h3 class="job-title">Junior Software Developer</h3>
+                        <div class="company-name">Kidzie, Remote</div>
+                        <div class="work-period">March 2019 - May 2021</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Test and fix all issues related to the front end (Vue Js)</li>
+                                <li>Create website layout/user interface by using standard HTML/CSS practice</li>
+                                <li>Build reusable code and libraries for future use</li>
+                                <li>Ensuring web design is optimized for smartphones</li>
+                                <li>Utilizing a variety of mark-up languages to write web pages</li>
+                                <li>Build the front end of applications through appealing visual design</li>
+                                <li>Develop and manage well-functioning databases and applications</li>
+                                <li>Write effective APIs</li>
+                                <li>Test software to ensure responsiveness and efficiency</li>
+                                <li>Troubleshoot, debug, and upgrade software</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            
+            <section id="education" aria-labelledby="education-heading">
+                <div class="section-title" onclick="toggleSection('education-content')" tabindex="0" role="button" aria-expanded="true" aria-controls="education-content">
+                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    <h2 id="education-heading">Education</h2>
+                    <i class="fas fa-chevron-down toggle-icon" id="education-icon" aria-hidden="true"></i>
+                </div>
+                <div class="section-content" id="education-content">
+                    <article class="education-item">
+                        <h3 class="education-degree">Master in Web Science</h3>
+                        <div class="school-name">Syrian Virtual University, Damascus, Syria</div>
+                        <div class="education-period">September 2016 - January 2019</div>
+                    </article>
+                    
+                    <article class="education-item">
+                        <h3 class="education-degree">BA in Information Technology</h3>
+                        <div class="school-name">Syrian Virtual University, Damascus, Syria</div>
+                        <div class="education-period">September 2010 - June 2014</div>
+                    </article>
+                </div>
+            </section>
+            
+            <section id="skills" aria-labelledby="skills-heading">
+                <div class="section-title" onclick="toggleSection('skills-content')" tabindex="0" role="button" aria-expanded="true" aria-controls="skills-content">
+                    <i class="fas fa-code" aria-hidden="true"></i>
+                    <h2 id="skills-heading">Technical Skills</h2>
+                    <i class="fas fa-chevron-down toggle-icon" id="skills-icon" aria-hidden="true"></i>
+                </div>
+                <div class="section-content" id="skills-content">
+                    <div class="skills-container">
+                        <div class="skill-tag">.NET Development</div>
+                        <div class="skill-tag">ASP.NET Core</div>
+                        <div class="skill-tag">Entity Framework</div>
+                        <div class="skill-tag">Web Application Development</div>
+                        <div class="skill-tag">C#</div>
+                        <div class="skill-tag">HTML/CSS/JavaScript</div>
+                        <div class="skill-tag">REST APIs</div>
+                        <div class="skill-tag">DevExpress</div>
+                        <div class="skill-tag">Git</div>
+                        <div class="skill-tag">Crystal Report</div>
+                        <div class="skill-tag">Agile methodologies</div>
+                        <div class="skill-tag">Bootstrap</div>
+                        <div class="skill-tag">OOP</div>
+                        <div class="skill-tag">React</div>
+                        <div class="skill-tag">MVC, MVVM</div>
+                        <div class="skill-tag">Full-stack development</div>
+                        <div class="skill-tag">Code debugging</div>
+                        <div class="skill-tag">MS SQL SERVER</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="languages" aria-labelledby="languages-heading">
+                <div class="section-title" onclick="toggleSection('languages-content')" tabindex="0" role="button" aria-expanded="true" aria-controls="languages-content">
+                    <i class="fas fa-language" aria-hidden="true"></i>
+                    <h2 id="languages-heading">Languages</h2>
+                    <i class="fas fa-chevron-down toggle-icon" id="languages-icon" aria-hidden="true"></i>
+                </div>
+                <div class="section-content" id="languages-content">
+                    <div class="languages-list">
+                        <div class="language-item">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <span class="language-name">English</span>
+                        </div>
+                        <div class="language-item">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <span class="language-name">Arabic (Mother language)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Mohamed AL Keblawy - Software Developer </p>
+        </footer>
     </div>
-
-    <script src="script.js"></script>
+    
+    <!-- Preload FontAwesome icons -->
+    <div class="preload-icons">
+        <i class="fas fa-user"></i>
+        <i class="fas fa-briefcase"></i>
+        <i class="fas fa-graduation-cap"></i>
+        <i class="fas fa-code"></i>
+        <i class="fas fa-language"></i>
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-phone"></i>
+        <i class="fas fa-envelope"></i>
+        <i class="fab fa-github"></i>
+        <i class="fab fa-linkedin"></i>
+        <i class="fas fa-map-marker-alt"></i>
+        <i class="fas fa-globe"></i>
+        <i class="fas fa-download"></i>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    
+    <!-- JSON-LD structured data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohamed AL Keblawy",
+      "jobTitle": "Software Developer",
+      "telephone": "(+971) 54 345 8767",
+      "email": "alkeblawy.m@gmail.com",
+      "url": "https://mohamed-alkeblawy.com/",
+      "sameAs": [
+        "https://github.com/mohamed-al-keblawy",
+        "https://www.linkedin.com/in/mohamed-al-keblawy/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ras al-Khaimah",
+        "addressCountry": "United Arab Emirates"
+      },
+      "workExperience": [
+        {
+          "@type": "WorkPosition",
+          "name": "Software Developer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Inoclad Middle East"
+          },
+          "startDate": "2022-06",
+          "endDate": "2025-04",
+          "jobTitle": "Software Developer",
+          "description": "Developed and maintained Windows Forms applications using C# and .NET Framework."
+        },
+        {
+          "@type": "WorkPosition",
+          "name": ".Net Developer",
+          "worksFor": "Freelance",
+          "startDate": "2021-05",
+          "endDate": "2022-01",
+          "jobTitle": ".Net Developer",
+          "description": "Full-stack development using MVC, .Net Core, and Azure."
+        },
+        {
+          "@type": "WorkPosition",
+          "name": "Junior Software Developer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Kidzie"
+          },
+          "startDate": "2019-03",
+          "endDate": "2021-05",
+          "jobTitle": "Junior Software Developer",
+          "description": "Front-end development with Vue.js and backend API development."
+        }
+      ],
+      "knowsAbout": [".NET Development", "ASP.NET Core", "C#", "Entity Framework", "Web Application Development", "REST APIs", "Full-stack development"],
+      "knowsLanguage": ["English", "Arabic"]
+    }
+    </script>
+    
+    <script>
+        // Improve page load performance with deferred scripts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add event listeners after DOM is loaded
+            const sections = document.querySelectorAll('.section-title');
+            sections.forEach(function(section) {
+                section.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        const sectionId = this.getAttribute('aria-controls');
+                        toggleSection(sectionId);
+                    }
+                });
+            });
+        });
+        
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const iconId = sectionId.replace("content", "icon");
+            const icon = document.getElementById(iconId);
+            const sectionTitle = section.previousElementSibling;
+            
+            section.classList.toggle('collapsed');
+            
+            if (section.classList.contains('collapsed')) {
+                icon.style.transform = 'rotate(-90deg)';
+                sectionTitle.setAttribute('aria-expanded', 'false');
+            } else {
+                icon.style.transform = 'rotate(0)';
+                sectionTitle.setAttribute('aria-expanded', 'true');
+            }
+        }
+    </script>
 </body>
 </html>
